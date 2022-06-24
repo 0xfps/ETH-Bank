@@ -113,4 +113,16 @@ contract Bank {
         /// @dev Returns true if the address has set a password already.
         return passwords[_address] != bytes32(0);
     }
+
+    function getBalance() public view returns(uint256) {
+        require(hasAccount(msg.sender), "Non-Account address");
+        return balances[msg.sender];
+    }
+
+    function changePassword(bytes32 oldPassword, bytes32 newPassword) public {
+        require(hasAccount(msg.sender), "Non-Account address");
+        require(passwords[msg.sender] == oldPassword, "Wrong password");
+        require(newPassword.length == 32, "Invalid password length.");
+        passwords[msg.sender] = newPassword;
+    }
 }
