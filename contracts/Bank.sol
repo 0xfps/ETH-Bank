@@ -1,11 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.0;
-/**
-* @dev  My name is Anthony (fps).
-*       I'm a Solidity Developer.
-*       I'm pleased to meet you.
-*       :)
-*/
 
 import "../interfaces/IBank.sol";
 
@@ -43,6 +37,7 @@ contract Bank {
     mapping(address => bytes32) private passwords;
     /// @dev Mapping the plans to their prices for upgrades.
     mapping(Plan => uint256) private planPrices;
+    mapping(address => Plan) private userPlan;
     /// @dev Mapping plans to their limits.
     mapping(Plan => uint256) private planLimits;
     /// @dev Mapping address to the amount of ether in their balance.
@@ -85,6 +80,7 @@ contract Bank {
         require(password.length == 32, "Invalid password hash.");
         /// @dev Create account.
         passwords[msg.sender] = password;
+        userPlan[msg.sender] = Plan.Free;
     }
 
     /**
@@ -106,6 +102,7 @@ contract Bank {
         require(password.length == 32, "Invalid password hash.");
         /// @dev Create account.
         passwords[_address] = password;
+        userPlan[_address] = Plan.Free;
     }
 
     /**
@@ -121,14 +118,65 @@ contract Bank {
     }
 
     function getBalance() public view returns(uint256) {
-        require(hasAccount(msg.sender), "Non-Account address");
+        require(hasAccount(msg.sender), "Non-Account address.");
         return balances[msg.sender];
     }
 
     function changePassword(bytes32 oldPassword, bytes32 newPassword) public {
-        require(hasAccount(msg.sender), "Non-Account address");
-        require(passwords[msg.sender] == oldPassword, "Wrong password");
+        require(hasAccount(msg.sender), "Non-Account address.");
+        require(passwords[msg.sender] == oldPassword, "Wrong password.");
         require(newPassword.length == 32, "Invalid password length.");
         passwords[msg.sender] = newPassword;
+    }
+
+    function deposit(bytes32 password) public payable {
+        require(hasAccount(msg.sender), "Non-Account address.");
+        require(passwords[msg.sender] == password, "Wrong password.");
+        require(msg.value != 0, "Cannot deposit 0");
+
+        Plan usersPlan = userPlan[msg.sender];
+        uint userLimit = planLimits[usersPlan];
+
+        require(msg.value <= userLimit, "Cannot deposit more than your limit.");
+        require(balances[msg.sender] + msg.value <= userLimit, "You cannot have more than your limit.");
+
+        balances[msg.sender] += msg.value;
+    }
+
+    function withdraw(uint256 amount, bytes32 password) public payable {
+        require(hasAccount(msg.sender), "Non-Account address.");
+        require(passwords[msg.sender] == password, "Wrong password.");
+        require(msg.value != 0, "Cannot withdraw 0");
+
+        Plan usersPlan = userPlan[msg.sender];
+        uint userLimit = planLimits[usersPlan];
+
+        require(msg.value <= userLimit, "Cannot withdraw more than your limit.");
+        require(balances[msg.sender] >= msg.value, "You cannot withdraw more than you have.");
+
+        payable(msg.sender).transfer(amount);
+    }
+
+    function upgrade(uint256 level, bytes32 password) public payable {
+        require(hasAccount(msg.sender), "Non-Account address.");
+        require(passwords[msg.sender] == password, "Wrong password.");
+        require(level < 4, "Not valid level");
+        
+        Plan usersPlan = userPlan[msg.sender];
+        uint256 price = planPrices[Plan(level)];
+
+        require(usersPlan != Plan.Ultimate, "You cannot upgrade this. This is max.");
+
+        require(msg.value >= price, "Plan price higher than payment.");
+
+        uint256 balance = msg.value - price;
+
+        userPlan[msg.sender] = Plan(level);
+        payable(msg.sender).transfer(balance);
+    }
+
+    function show() public view returns(Plan) {
+        require(hasAccount(msg.sender), "Non-Account address.");
+        return userPlan[msg.sender];
     }
 }
