@@ -117,11 +117,21 @@ contract Bank {
         return passwords[_address] != bytes32(0);
     }
 
+    /**
+    * @dev  Returns the balance of the caller.
+    *       Caller must have an account.
+    *
+    * @return uint256 caller's balance.
+    */
     function getBalance() public view returns(uint256) {
         require(hasAccount(msg.sender), "Non-Account address.");
         return balances[msg.sender];
     }
 
+    /**
+    * @dev  Changes password from `oldPassword` to new `passWord`.
+    *       Old passwords must match.
+    */
     function changePassword(bytes32 oldPassword, bytes32 newPassword) public {
         require(hasAccount(msg.sender), "Non-Account address.");
         require(passwords[msg.sender] == oldPassword, "Wrong password.");
@@ -129,6 +139,9 @@ contract Bank {
         passwords[msg.sender] = newPassword;
     }
 
+    /**
+    * @dev Deposits money into the bank.
+    */
     function deposit(bytes32 password) public payable {
         require(hasAccount(msg.sender), "Non-Account address.");
         require(passwords[msg.sender] == password, "Wrong password.");
@@ -143,6 +156,9 @@ contract Bank {
         balances[msg.sender] += msg.value;
     }
 
+    /**
+    * @dev Withdraw money from the bank.
+    */
     function withdraw(uint256 amount, bytes32 password) public payable {
         require(hasAccount(msg.sender), "Non-Account address.");
         require(passwords[msg.sender] == password, "Wrong password.");
@@ -157,6 +173,9 @@ contract Bank {
         payable(msg.sender).transfer(amount);
     }
 
+    /**
+    * @dev Upgrade plan to `level`.
+    */
     function upgrade(uint256 level, bytes32 password) public payable {
         require(hasAccount(msg.sender), "Non-Account address.");
         require(passwords[msg.sender] == password, "Wrong password.");
