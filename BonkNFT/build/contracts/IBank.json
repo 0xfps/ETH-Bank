@@ -1,0 +1,1007 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "password",
+          "type": "bytes32"
+        }
+      ],
+      "name": "bankBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "oldPassword",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "newPassword",
+          "type": "bytes32"
+        }
+      ],
+      "name": "changePassword",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "password",
+          "type": "bytes32"
+        }
+      ],
+      "name": "close",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ownerAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "password",
+          "type": "bytes32"
+        }
+      ],
+      "name": "createAcount",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "password",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "password",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "password",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint8",
+          "name": "level",
+          "type": "uint8"
+        }
+      ],
+      "name": "upgrade",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "password",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "1": "contracts/interfaces/IBank.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/interfaces/IBank.sol",
+    "exportedSymbols": {
+      "IBank": [
+        646
+      ]
+    },
+    "id": 647,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 580,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "36:23:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IBank",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 581,
+          "nodeType": "StructuredDocumentation",
+          "src": "61:120:1",
+          "text": " @title IBank interface.\n @author Anthony (fps) https://github.com/fps8k.\n @dev \n How will the bank function?"
+        },
+        "fullyImplemented": false,
+        "id": 646,
+        "linearizedBaseContracts": [
+          646
+        ],
+        "name": "IBank",
+        "nameLocation": "194:5:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 582,
+              "nodeType": "StructuredDocumentation",
+              "src": "206:244:1",
+              "text": " @dev Allows the user to create an account associated with their `ownerAddress` and a set `password`.\n \n @param ownerAddress :: Address of the account owner.\n @param password :: Desired password, hashed off chain."
+            },
+            "functionSelector": "906c4dac",
+            "id": 589,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createAcount",
+            "nameLocation": "464:12:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 587,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 584,
+                  "mutability": "mutable",
+                  "name": "ownerAddress",
+                  "nameLocation": "485:12:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 589,
+                  "src": "477:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 583,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "477:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 586,
+                  "mutability": "mutable",
+                  "name": "password",
+                  "nameLocation": "507:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 589,
+                  "src": "499:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 585,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "499:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "476:40:1"
+            },
+            "returnParameters": {
+              "id": 588,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "525:0:1"
+            },
+            "scope": 646,
+            "src": "455:71:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 590,
+              "nodeType": "StructuredDocumentation",
+              "src": "532:229:1",
+              "text": " @dev Return the caller's balance in the bank.\n `password` must match the password of the caller.\n @param password :: Password, hashed off chain.\n @return uint256 balance of the account."
+            },
+            "functionSelector": "cbf6f522",
+            "id": 597,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "bankBalance",
+            "nameLocation": "775:11:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 593,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 592,
+                  "mutability": "mutable",
+                  "name": "password",
+                  "nameLocation": "795:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 597,
+                  "src": "787:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 591,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "787:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "786:18:1"
+            },
+            "returnParameters": {
+              "id": 596,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 595,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 597,
+                  "src": "827:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 594,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "827:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "826:9:1"
+            },
+            "scope": 646,
+            "src": "766:70:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 598,
+              "nodeType": "StructuredDocumentation",
+              "src": "842:261:1",
+              "text": " @dev Deposits some `amount` into the callers account.\n `password` must match the password of the caller.\n @param password :: Password, hashed off chain.\n @param amount :: Desired amount to deposit based on the current plan."
+            },
+            "functionSelector": "1de26e16",
+            "id": 605,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deposit",
+            "nameLocation": "1117:7:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 603,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 600,
+                  "mutability": "mutable",
+                  "name": "password",
+                  "nameLocation": "1133:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 605,
+                  "src": "1125:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 599,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1125:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 602,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1151:6:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 605,
+                  "src": "1143:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 601,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1143:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1124:34:1"
+            },
+            "returnParameters": {
+              "id": 604,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1167:0:1"
+            },
+            "scope": 646,
+            "src": "1108:60:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 606,
+              "nodeType": "StructuredDocumentation",
+              "src": "1174:330:1",
+              "text": " @dev Transfers `amount` to `to` with a minimal tax paid owned by the contract.\n `password` must match the password of the caller.\n @param password :: Password, hashed off chain.\n @param to :: Address of the receiver.\n @param amount :: Desired amount to deposit based on the current plan."
+            },
+            "functionSelector": "3feb1bd8",
+            "id": 615,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transfer",
+            "nameLocation": "1518:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 613,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 608,
+                  "mutability": "mutable",
+                  "name": "password",
+                  "nameLocation": "1535:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 615,
+                  "src": "1527:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 607,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1527:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 610,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nameLocation": "1553:2:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 615,
+                  "src": "1545:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 609,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1545:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 612,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1565:6:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 615,
+                  "src": "1557:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 611,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1557:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1526:46:1"
+            },
+            "returnParameters": {
+              "id": 614,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1581:0:1"
+            },
+            "scope": 646,
+            "src": "1509:73:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 616,
+              "nodeType": "StructuredDocumentation",
+              "src": "1588:265:1",
+              "text": " @dev Transfers `amount` of ether to the caller's address.\n `password` must match the password of the caller.\n @param password :: Password, hashed off chain.\n @param amount :: Desired amount to deposit based on the current plan."
+            },
+            "functionSelector": "040cf020",
+            "id": 623,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "nameLocation": "1867:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 621,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 618,
+                  "mutability": "mutable",
+                  "name": "password",
+                  "nameLocation": "1884:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 623,
+                  "src": "1876:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 617,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1876:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 620,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1902:6:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 623,
+                  "src": "1894:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 619,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1894:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1875:34:1"
+            },
+            "returnParameters": {
+              "id": 622,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1918:0:1"
+            },
+            "scope": 646,
+            "src": "1858:61:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 624,
+              "nodeType": "StructuredDocumentation",
+              "src": "1925:221:1",
+              "text": " @dev Pushes the caller level to the desired `level`.\n `password` must match the password of the caller.\n @param password :: Password, hashed off chain.\n @param level :: Desired level."
+            },
+            "functionSelector": "2275d1d0",
+            "id": 631,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "upgrade",
+            "nameLocation": "2160:7:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 629,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 626,
+                  "mutability": "mutable",
+                  "name": "password",
+                  "nameLocation": "2176:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 631,
+                  "src": "2168:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 625,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2168:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 628,
+                  "mutability": "mutable",
+                  "name": "level",
+                  "nameLocation": "2192:5:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 631,
+                  "src": "2186:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 627,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2186:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2167:31:1"
+            },
+            "returnParameters": {
+              "id": 630,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2207:0:1"
+            },
+            "scope": 646,
+            "src": "2151:57:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 632,
+              "nodeType": "StructuredDocumentation",
+              "src": "2214:272:1",
+              "text": " @dev Sets the `newPassword` as the password of the caller.\n `oldPassword` must match the password of the caller.\n @param oldPassword :: Old password, hashed off chain.\n @param newPassword :: Desired desired password, hashed off chain."
+            },
+            "functionSelector": "292785fc",
+            "id": 639,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "changePassword",
+            "nameLocation": "2500:14:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 637,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 634,
+                  "mutability": "mutable",
+                  "name": "oldPassword",
+                  "nameLocation": "2523:11:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 639,
+                  "src": "2515:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 633,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2515:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 636,
+                  "mutability": "mutable",
+                  "name": "newPassword",
+                  "nameLocation": "2544:11:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 639,
+                  "src": "2536:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 635,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2536:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2514:42:1"
+            },
+            "returnParameters": {
+              "id": 638,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2565:0:1"
+            },
+            "scope": 646,
+            "src": "2491:75:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 640,
+              "nodeType": "StructuredDocumentation",
+              "src": "2572:201:1",
+              "text": " @dev Closes the user's account and transfers all balance to the user.\n `password` must match the password of the caller.\n @param password :: Password, hashed off chain."
+            },
+            "functionSelector": "39c79e0c",
+            "id": 645,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "close",
+            "nameLocation": "2787:5:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 643,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 642,
+                  "mutability": "mutable",
+                  "name": "password",
+                  "nameLocation": "2801:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 645,
+                  "src": "2793:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 641,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2793:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2792:18:1"
+            },
+            "returnParameters": {
+              "id": 644,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2819:0:1"
+            },
+            "scope": 646,
+            "src": "2778:42:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 647,
+        "src": "184:2638:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "36:2787:1"
+  },
+  "bytecode": "",
+  "bytecodeSha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.12+commit.f00d7308"
+  },
+  "contractName": "IBank",
+  "coverageMap": {
+    "branches": {},
+    "statements": {}
+  },
+  "dependencies": [],
+  "deployedBytecode": "",
+  "deployedSourceMap": "",
+  "language": "Solidity",
+  "natspec": {
+    "author": "Anthony (fps) https://github.com/fps8k.",
+    "details": " How will the bank function?",
+    "kind": "dev",
+    "methods": {
+      "bankBalance(bytes32)": {
+        "details": "Return the caller's balance in the bank. `password` must match the password of the caller.",
+        "params": {
+          "password": ":: Password, hashed off chain."
+        },
+        "returns": {
+          "_0": "uint256 balance of the account."
+        }
+      },
+      "changePassword(bytes32,bytes32)": {
+        "details": "Sets the `newPassword` as the password of the caller. `oldPassword` must match the password of the caller.",
+        "params": {
+          "newPassword": ":: Desired desired password, hashed off chain.",
+          "oldPassword": ":: Old password, hashed off chain."
+        }
+      },
+      "close(bytes32)": {
+        "details": "Closes the user's account and transfers all balance to the user. `password` must match the password of the caller.",
+        "params": {
+          "password": ":: Password, hashed off chain."
+        }
+      },
+      "createAcount(address,bytes32)": {
+        "details": "Allows the user to create an account associated with their `ownerAddress` and a set `password`. ",
+        "params": {
+          "ownerAddress": ":: Address of the account owner.",
+          "password": ":: Desired password, hashed off chain."
+        }
+      },
+      "deposit(bytes32,uint256)": {
+        "details": "Deposits some `amount` into the callers account. `password` must match the password of the caller.",
+        "params": {
+          "amount": ":: Desired amount to deposit based on the current plan.",
+          "password": ":: Password, hashed off chain."
+        }
+      },
+      "transfer(bytes32,address,uint256)": {
+        "details": "Transfers `amount` to `to` with a minimal tax paid owned by the contract. `password` must match the password of the caller.",
+        "params": {
+          "amount": ":: Desired amount to deposit based on the current plan.",
+          "password": ":: Password, hashed off chain.",
+          "to": ":: Address of the receiver."
+        }
+      },
+      "upgrade(bytes32,uint8)": {
+        "details": "Pushes the caller level to the desired `level`. `password` must match the password of the caller.",
+        "params": {
+          "level": ":: Desired level.",
+          "password": ":: Password, hashed off chain."
+        }
+      },
+      "withdraw(bytes32,uint256)": {
+        "details": "Transfers `amount` of ether to the caller's address. `password` must match the password of the caller.",
+        "params": {
+          "amount": ":: Desired amount to deposit based on the current plan.",
+          "password": ":: Password, hashed off chain."
+        }
+      }
+    },
+    "title": "IBank interface.",
+    "version": 1
+  },
+  "offset": [
+    184,
+    2822
+  ],
+  "opcodes": "",
+  "pcMap": {},
+  "sha1": "6b64d1caa8b55c5d0890df0d8f1a3cd061c660d1",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity ^0.8.0;\n\n/**\n* @title IBank interface.\n* @author Anthony (fps) https://github.com/fps8k.\n* @dev \n* How will the bank function?\n*/\n\n\ninterface IBank {\n    /**\n    * @dev Allows the user to create an account associated with their `ownerAddress` and a set `password`.\n    * \n    * @param ownerAddress :: Address of the account owner.\n    * @param password :: Desired password, hashed off chain.\n    */\n    function createAcount(address ownerAddress, bytes32 password) external;\n\n    /**\n    * @dev Return the caller's balance in the bank.\n    * `password` must match the password of the caller.\n    *\n    * @param password :: Password, hashed off chain.\n    *\n    * @return uint256 balance of the account.\n    */\n    function bankBalance(bytes32 password) external view returns(uint256);\n\n    /**\n    * @dev Deposits some `amount` into the callers account.\n    * `password` must match the password of the caller.\n    *\n    * @param password :: Password, hashed off chain.\n    * @param amount :: Desired amount to deposit based on the current plan.\n    */\n    function deposit(bytes32 password, uint256 amount) external;\n\n    /**\n    * @dev Transfers `amount` to `to` with a minimal tax paid owned by the contract.\n    * `password` must match the password of the caller.\n    *\n    * @param password :: Password, hashed off chain.\n    * @param to :: Address of the receiver.\n    * @param amount :: Desired amount to deposit based on the current plan.\n    */\n    function transfer(bytes32 password, address to, uint256 amount) external;\n\n    /**\n    * @dev Transfers `amount` of ether to the caller's address.\n    * `password` must match the password of the caller.\n    *\n    * @param password :: Password, hashed off chain.\n    * @param amount :: Desired amount to deposit based on the current plan.\n    */\n    function withdraw(bytes32 password, uint256 amount) external;\n\n    /**\n    * @dev Pushes the caller level to the desired `level`.\n    * `password` must match the password of the caller.\n    *\n    * @param password :: Password, hashed off chain.\n    * @param level :: Desired level.\n    */\n    function upgrade(bytes32 password, uint8 level) external;\n\n    /**\n    * @dev Sets the `newPassword` as the password of the caller.\n    * `oldPassword` must match the password of the caller.\n    *\n    * @param oldPassword :: Old password, hashed off chain.\n    * @param newPassword :: Desired desired password, hashed off chain.\n    */\n    function changePassword(bytes32 oldPassword, bytes32 newPassword) external;\n\n    /**\n    * @dev Closes the user's account and transfers all balance to the user.\n    * `password` must match the password of the caller.\n    *\n    * @param password :: Password, hashed off chain.\n    */\n    function close(bytes32 password) external;\n}\n",
+  "sourceMap": "",
+  "sourcePath": "contracts/interfaces/IBank.sol",
+  "type": "interface"
+}
