@@ -59,9 +59,9 @@ contract Bank {
 
         /// @dev Initialize the `planLimits`.
         planLimits[Plan.Free] = 1 ether;
-        planLimits[Plan.Basic] = 2 ether;
-        planLimits[Plan.Pro] = 5 ether;
-        planLimits[Plan.Ultimate] =  stretch;
+        planLimits[Plan.Basic] = 5 ether;
+        planLimits[Plan.Pro] = 10 ether;
+        planLimits[Plan.Ultimate] = stretch;
     }
 
     /**
@@ -171,6 +171,7 @@ contract Bank {
         require(balances[msg.sender] >= msg.value, "You cannot withdraw more than you have.");
 
         payable(msg.sender).transfer(amount);
+        balances[msg.sender] -= amount;
     }
 
     /**
@@ -185,6 +186,7 @@ contract Bank {
         uint256 price = planPrices[Plan(level)];
 
         require(usersPlan != Plan.Ultimate, "You cannot upgrade this. This is max.");
+        require(uint256(userPlan[msg.sender]) < level, "You cannot downgrade");
 
         require(msg.value >= price, "Plan price higher than payment.");
 
