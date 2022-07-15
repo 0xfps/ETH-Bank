@@ -1,7 +1,7 @@
 # ETH-Bank
 ## Bank for Ether. 
 
-This is a project that allows users to deposit, withdraw and transfer `Ether` with respect to the amount they have deposited and their deposit plans.
+This is a project that allows users to deposit and withdraw `Ether` with respect to the amount they have deposited and their deposit plans.
 
 ## Depositing
 Users can deposit Ether into their personal accounts, their accounts of course will be protected by password, hashed off-chain, and then set onchain.
