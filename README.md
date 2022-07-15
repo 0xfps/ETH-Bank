@@ -11,5 +11,5 @@ Deposits will vary based on the users current plan grouped into:
 - [x] Pro (Up to 10 Ether).
 - [x] Ultimate (Unlimited Ether).
 
-## Withdrawal And Transfers
-Like deposits, withdrawals and transfers are also dependent on the users plan, and the limits are the same.
+## Withdrawals
+Like deposits, withdrawals are also dependent on the users plan, and the limits are the same.
