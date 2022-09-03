@@ -5,12 +5,12 @@ import "./interfaces/IBank.sol";
 
 /**
 * @title Bank Contract.
-* @author Anthony (fps) https://github.com/fps8k.
+* @author Anthony (fps) https://github.com/0xfps.
 * @dev  The bank itself.
 *       Like a typical bank, users deposit and their balances are
 *       recorded against their addresses, but the ether is deposited
 *       directly into the contract bank.
-*       Withdrawals and Transfers cost some tax.
+*       Withdrawals cost some tax.
 *       Deposits don't.
 */
 
