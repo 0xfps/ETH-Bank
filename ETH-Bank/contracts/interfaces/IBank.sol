@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 /**
 * @title IBank interface.
-* @author Anthony (fps) https://github.com/fps8k.
+* @author Anthony (fps) https://github.com/0xfps.
 * @dev 
 * How will the bank function?
 */
