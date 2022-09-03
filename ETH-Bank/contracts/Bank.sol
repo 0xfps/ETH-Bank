@@ -9,9 +9,7 @@ import "./interfaces/IBank.sol";
 * @dev  The bank itself.
 *       Like a typical bank, users deposit and their balances are
 *       recorded against their addresses, but the ether is deposited
-*       directly into the contract bank.
-*       Withdrawals cost some tax.
-*       Deposits don't.
+*       directly into the contract bank. Users can withdraw funds anytime.
 */
 
 
