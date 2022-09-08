@@ -13,3 +13,4 @@ Deposits will vary based on the users current plan grouped into:
 
 ## Withdrawals
 Like deposits, withdrawals are also dependent on the users plan, and the limits are the same.
+Transfers take 1% tax.

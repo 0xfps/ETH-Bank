@@ -155,6 +155,25 @@ contract Bank {
     }
 
     /**
+    * @dev Transfer cash.
+    */
+    function transfer(address to, uint256 _amount) public {
+        require(to != address(0), "0x0 Address");
+        require(_amount != 0, "Amount == 0");
+
+        uint256 tax = (_amount * 1) / 100;
+        uint256 totalTransfer = _amount + tax;
+        
+        require(balances[msg.sender] >= totalTransfer, "Balance < Transfer Balance");
+
+        balances[msg.sender] -= totalTransfer;
+
+        (bool sent, ) = to.call{value: totalTransfer}("");
+
+        require(sent, "Transfer Failed!");
+    }
+
+    /**
     * @dev Withdraw money from the bank.
     */
     function withdraw(uint256 amount, bytes32 password) public payable {
